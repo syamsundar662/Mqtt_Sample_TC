@@ -75,7 +75,7 @@ class _MainControlPanelState extends State<MainControlPanel> {
 
       setState(() {
         updatedPayloadMap = jsonDecode(payload);
-        log('Updated Payload: $updatedPayloadMap');
+        print('Updated Payload: $updatedPayloadMap');
       });
     });
   }
@@ -101,8 +101,8 @@ class _MainControlPanelState extends State<MainControlPanel> {
     }
 
     final payloadJson = jsonEncode(payloadMap);
-    log('Payload Map: $payloadMap');
-    log('JSON Payload: $payloadJson');
+    print('Payload Map: $payloadMap');
+    print('JSON Payload: $payloadJson');
 
     builder.addString(payloadJson);
     client.publishMessage(topic, MqttQos.atMostOnce, builder.payload!);
